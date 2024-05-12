@@ -2,6 +2,15 @@ import dataOrig from './data.js'
 import dataReplace from './dataReplace.js'
 
 const values = Object.keys(dataReplace)
+const startBTN = document.getElementById('start');
+const numberQuestionElm = document.getElementById('numberQuestion');
+const questionField  = document.getElementById('questionField');
+const startForm = document.getElementById('start-form');
+const gameProgressElm = document.getElementById('game-process');
+const yesElm = document.getElementById('yes');
+const noElm = document.getElementById('no');
+const idkElm = document.getElementById('idk');
+
 for(let i = 0; i < dataOrig.length; i++){
     dataOrig[i].tags = dataOrig[i].tags.split(' ');
     const elm = dataOrig[i];
@@ -9,7 +18,6 @@ for(let i = 0; i < dataOrig.length; i++){
     dataOrig[i].tags = elm.tags.filter((el) =>  values.includes(el));
     dataOrig[i].tags.sort();
 }
-// console.log(values)
 function addDataTags(arr){
     const age = calculateAge(...(arr.born).split(' '));
     const name = arr.name.split(' ')[0];
@@ -38,11 +46,15 @@ function calculateAge(day, month, year) {
     }
     return age;
 }
-// console.log(dataOrig)
+
 
 let i = 0;
+let questionTH = 1;
 function startGame(){
+    startForm.classList.add("d-none");
     let data = [...dataOrig];
+    gameProgressElm.classList.remove('d-none');
+    questionTH = 1;
     function start(){
         if(data.length === 0){
             console.log("I can't find");
@@ -65,13 +77,15 @@ function startGame(){
             return start();
         }
         i = 0;
-        const answer = getQuenstion(elm);
-        if(answer){
+        questionField.innerText = (dataReplace[elm]);//harcnenq talis
+        numberQuestionElm.innerText = questionTH;
+        questionTH++;
+        yesElm.onclick = () => {
             data = data.filter((el) => {
                 el = el.tags;
-                for(let i = 0; i < el.length; i++){
+                for (let i = 0; i < el.length; i++) {
                     const element = el[i];
-                    if(elm === element){
+                    if (elm === element) {
                         el.splice(i, 1);
                         return true;
                     }
@@ -79,21 +93,19 @@ function startGame(){
             })
             return start();
         }
-        data = data.filter((el) => {
-            el = el.tags;
-            const elmIndex = el.indexOf(elm);
-            return elmIndex === -1;
-        })
-        return start();
+        noElm.onclick = () => {
+            data = data.filter((el) => {
+                el = el.tags;
+                const elmIndex = el.indexOf(elm);
+                return elmIndex === -1;
+            })
+            return start();
+        }
     }
     start();
 }
-function getQuenstion(dataTag){
-    return;
-    let quenstion = prompt(dataReplace[dataTag]);
-    return quenstion === 'yes';
-}
-startGame();
+
+startBTN.onclick = () => startGame();
 //TEST to send my telegram
 // const BOT_TOKEN = '6947016260:AAGVDQcqcnJKxuGuFp8G_AQgpzYVPGSN6PI';
 // const CHAT_ID = '1688694245';

@@ -13,11 +13,10 @@
     <title>MysticMind Genie</title>
 </head>
 <body>
-<!--    Arame-->
 <header>
 
 </header>
-<div id="start-form" class="d-none">
+<div id="start-form">
     <main>
         <div class="container d-flex justify-content-center flex-column align-center position-relative">
             <div class="d-flex justify-content-center">
@@ -27,11 +26,11 @@
     </main>
     <footer class="mt-5 mb-5">
         <div class="container d-flex  justify-content-center">
-            <a href="#" class="text-center start-btn">ИГРАТЬ</a>
+            <a href="#" class="text-center start-btn" id="start">ИГРАТЬ</a>
         </div>
     </footer>
 </div>
-<div id="game-process">
+<div id="game-process" class="d-none">
     <div class="container d-flex justify-content-center flex-column align-center">
         <div class="row">
             <div class="d-flex justify-content-center genie-holder ">
@@ -39,27 +38,28 @@
             </div>
             <div class="game-big">
                 <div class="question-div d-flex ">
-                    <div class="number">
+                    <div class="number" id="numberQuestion">
                         1
                     </div>
-                    <div class="question d-flex "><p>Ваш персонаж мужчина?</p></div>
+                    <div class="question d-flex "><p id="questionField">Ваш персонаж мужчина?</p></div>
                 </div>
                 <div class="questions-holder d-flex flex-column">
-                    <div class="text-center">
-                        <a class="d-block" href="#">Да</a>
+                    <div class="text-center cursor">
+                        <p class="d-block" id="yes">Да</p>
                     </div>
-                    <div class="text-center">
-                        <a class="d-block" href="#">Нет</a>
+                    <div class="text-center cursor">
+                        <p class="d-block" id="no">Нет</p>
                     </div>
 
-                    <div class="text-center">
-                        <a class="d-block" href="#">Я не знаю</a>
+                    <div class="text-center cursor">
+                        <p class="d-block" id="idk">Я не знаю</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <script src="script.js" type="module"></script>
 </body>
