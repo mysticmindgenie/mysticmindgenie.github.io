@@ -1,1 +1,132 @@
-/*Arame*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    list-style: none;
+    text-decoration: none;
+    color: #18455A;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    background-image: url(./images/bg.jpg);
+    background-size: cover;
+
+}
+
+header {
+    width: 100%;
+    height: 100px;
+}
+
+img {
+    width: 400px;
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.36);
+    width: 100%;
+}
+
+.start-btn {
+    font-family: "Sansita", sans-serif;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    text-decoration: none;
+    padding: 5px 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+#game-process {
+    background-color: rgba(255, 255, 255, 0.36);
+    padding: 60px;
+}
+
+.genie-holder {
+    width: fit-content;
+}
+
+.question-div {
+    margin: 0;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.7);
+    -webkit-filter: drop-shadow(-6px -5px 20px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-6px -5px 20px rgba(0, 0, 0, 0.4));
+    display: grid;
+    align-content: center;
+    padding-left: 0 !important;
+    padding-right: 40px;
+    width: fit-content !important;
+    height: fit-content;
+}
+
+.number {
+    background-color: #18455A;
+    padding: 25px 25px 25px 40px;
+    height: 100%;
+    color: aliceblue;
+}
+
+.question {
+    padding-left: 25px;
+    align-items: center;
+}
+
+.questions-holder {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: 50px;
+    gap: 30px;
+    padding: 25px 0;
+    width: calc(100% + 50px);
+}
+
+.game-big {
+    width: fit-content;
+}
